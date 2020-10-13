@@ -14,7 +14,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: calc(var(--footer-height));
+    height: 80%;
 }
 
 section {
@@ -25,41 +25,11 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    margin-top: var(--gutter);
-    margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
 }
-
-header {
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    height: var(--header-height);
-    box-shadow: var(--shadow);
-}
-
-footer {
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    box-shadow: var(--shadow);
-}
-
 
 h2 {
     font-size: 1.8rem;
     font-weight: bold;
-}
-
-.gutter-right {
-    margin-right: 20px;
-}
-
-
-header img {
-    height: var(--header-height);
 }
 
 
@@ -82,4 +52,10 @@ footer {
     box-shadow: var(--shadow);
 }
   
-  
+/* Classes -----------------------------------------------*/
+
+.rowIt {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
