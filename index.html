@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/home.css">
+   
     <title>Document</title>
 </head>
 
@@ -28,7 +28,34 @@
         <section class="main-section">
             
             <content>
-                
+
+                <div class="rowIt">
+                    <label class="rando-pokemon">
+                        <input type="radio" name="pokemon-fam" value="">     
+                        <img src="">
+                    </label>
+
+                    <label class="rando-pokemon">
+                        <input type="radio" name="pokemon-fam" value="">     
+                        <img src="">
+                    </label>
+                    
+                    <label class="rando-pokemon">
+                        <input type="radio" name="pokemon-fam" value="">     
+                        <img src="">
+                    </label>
+                </div>
+
+                <div>
+                    <span>Result</span>
+                </div>
+
+                <div id="capture-container" class="hidden">
+                    <p id="capture-result"></p>
+                    <button id="capture-button">CATCH EM!</button>
+              
+                </div> 
+
             </content>
 
         </section>
@@ -36,12 +63,12 @@
 
     <!-- Footer -------------------------------------------------------------->
     <footer>
-        <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
+    
     </footer>
 
 
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="./app.js"></script>
 </body>
 
 </html>
