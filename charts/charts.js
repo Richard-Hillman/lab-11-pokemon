@@ -2,6 +2,7 @@ import { getFromLocalStorage } from '../utils.js';
 const ray = getFromLocalStorage('RESULTS');
 const encounterBox = document.querySelector('#encount');
 const capturedBox = document.querySelector('#capped');
+const resetButton = document.querySelector('#reset');
 // Mapping from local storage array and returning items to a const
 
 const pokeName = ray.map((item) => {
@@ -37,9 +38,7 @@ var myChart = new Chart(ctx, {
     },
     options: {
         legend: {
-            labels: {
-                defaultFontSize: 18
-            }
+            
         },
         
         scales: {
@@ -79,3 +78,9 @@ var myChart2 = new Chart(ctx, {
     
     }
 });
+
+resetButton.addEventListener('click', () => {
+
+    localStorage.clear();
+    window.location.href = '../index.html';
+})
