@@ -1,54 +1,81 @@
 import { getFromLocalStorage } from '../utils.js';
-
 const ray = getFromLocalStorage('RESULTS');
+const encounterBox = document.querySelector('#encount');
+const capturedBox = document.querySelector('#capped');
+// Mapping from local storage array and returning items to a const
 
 const pokeName = ray.map((item) => {
     return item.pokeName;
 });
 
-// const encountered = ray.map((item) => {
-    //     return item.encountered;
-    // });
-    
-    // const captured = ray.map((item) => {
-        //     return item.captured;
-        // });
-        
-var ctx = document.getElementById('myChart').getContext('2d');
+const encountered = ray.map((item) => {
+    return item.encountered;
+});
+console.log(encountered);
 
+const captured = ray.map((item) => {
+    return item.captured;
+});       
+
+// encounterBox.textContent = encountered;
+// capturedBox.textContent = captured;
+
+// chart 
+
+var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: pokeName,
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
+            label: 'Encounters',
+            backgroundColor: 'rgb(255,200,100,50)',
+            borderColor: 'rgb(2,2,10,50)',
+            borderWidth: 1,
+            data: encountered,
+        }]
+    },
+    options: {
+        legend: {
+            labels: {
+                defaultFontSize: 18
+            }
+        },
+        
+        scales: {
+            // xAxes: [{ stacked: true }],
+            yAxes: [{ stacked: false,
+                ticks: { beginAtZero: true,
+                    stepSize: 1 }, },  
+            ]
+        }
+    }
+});
+
+
+var ctx = document.getElementById('myChart2').getContext('2d');
+
+var myChart2 = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: pokeName,
+        datasets: [{
+            label: 'Captured',
+            backgroundColor: 'rgb(255,200,100,50)',
+            borderColor: 'rgb(200,2,100,50)',
+            borderWidth: 1,
+            data: captured,
         }]
     },
     options: {
         scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
+            // xAxes: [{ stacked: true }],
+            yAxes: [{ stacked: false,
+                ticks: { beginAtZero: true,
+                   
+                    stepSize: 1 },  
             }]
         }
+    
     }
 });

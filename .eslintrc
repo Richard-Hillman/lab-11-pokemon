@@ -15,7 +15,9 @@
   },
   "globals": {
     "QUnit": false,
-    "Chart": false
+    "Chart": false,
+    "myChart": false,
+    "myChart2": false
   },
   "rules": {
     "eqeqeq": ["error", "always"],

@@ -16,21 +16,21 @@ export function refreshPoke() {
     let pokeThree = getRandomPokemon(pokemonData);
 
 // while pokeone equals poketwo go back and do another getrandomPokemon
-    while (pokeOne.id === pokeTwo.id || pokeTwo.id === pokeThree.id || pokeThree.id === pokeOne.id) {
+    while (pokeOne.pokemon === pokeTwo.pokemon || pokeTwo.pokemon === pokeThree.pokemon || pokeThree.pokemon === pokeOne.pokemon) {
         pokeOne = getRandomPokemon(pokemonData);
         pokeTwo = getRandomPokemon(pokemonData);
         pokeThree = getRandomPokemon(pokemonData);
     }
 
-    radioButtons[0].value = pokeOne.id;
+    radioButtons[0].value = pokeOne.pokemon;
     images[0].src = pokeOne.url_image;
 
 
-    radioButtons[1].value = pokeTwo.id;
+    radioButtons[1].value = pokeTwo.pokemon;
     images[1].src = pokeTwo.url_image;
 
 
-    radioButtons[2].value = pokeThree.id;
+    radioButtons[2].value = pokeThree.pokemon;
     images[2].src = pokeThree.url_image;
 }
 

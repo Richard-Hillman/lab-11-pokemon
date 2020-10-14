@@ -28,7 +28,7 @@ refreshPoke();
 
 // loop through
 for (let i = 0; i < radioButtons.length; i++) {
-    radioButtons[i].addEventListener('change', (e) => {
+    radioButtons[i].addEventListener('click', (e) => {
 
         // loop through all radio and count how many time its encountered a pokemon
         radioButtons.forEach((radio) => {
@@ -58,6 +58,7 @@ for (let i = 0; i < radioButtons.length; i++) {
         }
         setInLocalStorage('RESULTS', resultsArray);
         refreshPoke();
+
     });
     
 }    
