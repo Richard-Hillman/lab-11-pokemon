@@ -16,15 +16,9 @@ export function refreshPoke() {
     let pokeThree = getRandomPokemon(pokemonData);
 
 // while pokeone equals poketwo go back and do another getrandomPokemon
-    while (pokeOne.id === pokeTwo.id) {
+    while (pokeOne.id === pokeTwo.id || pokeTwo.id === pokeThree.id || pokeThree.id === pokeOne.id) {
         pokeOne = getRandomPokemon(pokemonData);
-    }
-
-    while (pokeTwo.id === pokeThree.id) {
         pokeTwo = getRandomPokemon(pokemonData);
-    }
-
-    while (pokeThree.id === pokeOne.id) {
         pokeThree = getRandomPokemon(pokemonData);
     }
 
@@ -40,10 +34,12 @@ export function refreshPoke() {
     images[2].src = pokeThree.url_image;
 }
 
-export function findById(someArray, someId) {
+export function findById(someArray, someId, IDName) {
     for (let i = 0; i < someArray.length; i++) {
+
         const item = someArray[i];   
-        if (item.id === someId) {
+        
+        if (item[IDName] === someId) {
             return item;
         }
     }
@@ -57,9 +53,9 @@ export function getFromLocalStorage(key) {
    
 export function setInLocalStorage(key, value) {
     const stringifiedItem = JSON.stringify(value);
-    localStorage.setItem(key, stringifiedItem);   
+    localStorage.setItem(key, stringifiedItem);  
 }
     
 
 
-const captured = document.querySelector(':checked')
+// const captured = document.querySelector(':checked');
