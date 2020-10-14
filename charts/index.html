@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../styles/reset.css">
+        <link rel="stylesheet" href="../styles/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.bundle.js"></script>
+      
+        
+    <title>Document</title>
+</head>
+
+<body>
+   
+<!-- Header  ----------------------------------------------------------------->
+
+    <header>
+        <div>
+            <br>
+        </div>
+    </header>
+
+<!-- Main Section ------------------------------------------------------------>
+
+    <main>
+        <section class="main-section">
+        
+                <div>
+                    <h3> Encountered:<span id="encount">30</span></h3>
+                    <h3> Captured:<span id="capped">10</span></h3>
+                </div>
+
+            <content>
+
+                    <h1>RESULTS of your recent Hunt</h1>
+                
+                <div class="chart-container graph-one" style="position: relative; height: 450px; width: 700px;">
+                    <canvas id="myChart"></canvas> 
+                </div>
+
+                <div class="chart-container graph-two" style="position: relative; height: 450px; width: 700px;">
+                    <canvas id="myChart2"></canvas> 
+                </div>
+
+                
+            </content>
+            
+            <content class="resets">
+                        <button id="reset">START A NEW ADVENTURE</button>
+            </content>      
+        </section>
+    </main>
+
+    <!-- Footer -------------------------------------------------------------->
+    
+    <footer>
+    
+    </footer>
+
+
+
+    <script type="module" src="charts.js"></script>
+</body>
+
+</html>

@@ -15,37 +15,47 @@ export function refreshPoke() {
     let pokeTwo = getRandomPokemon(pokemonData);
     let pokeThree = getRandomPokemon(pokemonData);
 
-
-    while (pokeOne.id === pokeTwo.id) {
+// while pokeone equals poketwo go back and do another getrandomPokemon
+    while (pokeOne.pokemon === pokeTwo.pokemon || pokeTwo.pokemon === pokeThree.pokemon || pokeThree.pokemon === pokeOne.pokemon) {
         pokeOne = getRandomPokemon(pokemonData);
-    }
-
-    while (pokeTwo.id === pokeThree.id) {
         pokeTwo = getRandomPokemon(pokemonData);
-    }
-
-    while (pokeThree.id === pokeOne.id) {
         pokeThree = getRandomPokemon(pokemonData);
     }
 
-    radioButtons[0].value = pokeOne.id;
+    radioButtons[0].value = pokeOne.pokemon;
     images[0].src = pokeOne.url_image;
 
 
-    radioButtons[1].value = pokeTwo.id;
+    radioButtons[1].value = pokeTwo.pokemon;
     images[1].src = pokeTwo.url_image;
 
 
-    radioButtons[2].value = pokeThree.id;
+    radioButtons[2].value = pokeThree.pokemon;
     images[2].src = pokeThree.url_image;
 }
 
+export function findById(someArray, someId, IDName) {
+    for (let i = 0; i < someArray.length; i++) {
 
-export function removeById(someId) {
-    for (let i = 0; i < remainingPokemon.length; i++) {
-        if (someId === remainingPokemon[i]) {
-            remainingPokemon.splice(i, 1);
+        const item = someArray[i];   
+        
+        if (item[IDName] === someId) {
+            return item;
         }
     }
 }
 
+export function getFromLocalStorage(key) {
+    const retrievedKey = localStorage.getItem(key);
+    return JSON.parse(retrievedKey);
+}
+    
+   
+export function setInLocalStorage(key, value) {
+    const stringifiedItem = JSON.stringify(value);
+    localStorage.setItem(key, stringifiedItem);  
+}
+    
+
+
+// const captured = document.querySelector(':checked');

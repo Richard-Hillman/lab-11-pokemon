@@ -14,7 +14,10 @@
     "node": true
   },
   "globals": {
-    "QUnit": false
+    "QUnit": false,
+    "Chart": false,
+    "myChart": false,
+    "myChart2": false
   },
   "rules": {
     "eqeqeq": ["error", "always"],

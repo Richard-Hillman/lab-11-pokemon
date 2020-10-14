@@ -4,9 +4,13 @@ body {
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
     --gutter: 30px;
     --footer-height: 25px;
-    
+  
     font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+    background-image: url('../assets/pokemon.jpg');
+}
+
+header {
+    height:100px;
 }
 
 main {
@@ -25,6 +29,11 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+h1 {
+    font-size: 2.4rem;
+
 }
 
 h2 {
@@ -51,7 +60,14 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
-  
+
+input[type="radio"] {
+    visibility:hidden;
+}
+
+
+
+
 /* Classes -----------------------------------------------*/
 
 .rowIt {
@@ -59,3 +75,40 @@ footer {
     justify-content: center;
     flex-direction: row;
 }
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.justify { 
+    text-align: justify;
+}
+
+.block {
+    display: block;
+}
+
+.inblock {
+    display: inline-block;
+}
+
+.gutter-right {
+    margin-right: 20px;
+}
+
+.resets {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+/*IDS-----------------------------------------  */
